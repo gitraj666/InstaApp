@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "794042999358",
+    "firebase_url": "https://instaapp-4ed4a.firebaseio.com",
+    "project_id": "instaapp-4ed4a",
+    "storage_bucket": "instaapp-4ed4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794042999358:android:ee3c9eca77b1e31f",
+        "android_client_info": {
+          "package_name": "com.example.android.instaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794042999358-gm5qbr2fc9eohu521q2o98bcot1fn2c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.instaapp",
+            "certificate_hash": "179a115f7adada03ecd7a81938e73d735d9af1d5"
+          }
+        },
+        {
+          "client_id": "794042999358-ra9jdn5p9glr9mrqafe6lkthahgdgl86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB93n4pdtEPPAxaPMc4iABJo5oaWM9kLxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794042999358-ra9jdn5p9glr9mrqafe6lkthahgdgl86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794042999358:android:b03cf3cba38013c6",
+        "android_client_info": {
+          "package_name": "where.example.com.options"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794042999358-2m6snof6grfnpal7d52qvbgnd4dic2et.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "where.example.com.options",
+            "certificate_hash": "179a115f7adada03ecd7a81938e73d735d9af1d5"
+          }
+        },
+        {
+          "client_id": "794042999358-ra9jdn5p9glr9mrqafe6lkthahgdgl86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB93n4pdtEPPAxaPMc4iABJo5oaWM9kLxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794042999358-ra9jdn5p9glr9mrqafe6lkthahgdgl86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
