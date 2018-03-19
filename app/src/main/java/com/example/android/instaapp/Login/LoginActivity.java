@@ -114,6 +114,9 @@ public class LoginActivity extends AppCompatActivity {
                                         mPleaseWait.setVisibility(View.GONE);
                                     }
                                     else{
+                                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                        startActivity(intent);
+                                        /**
                                         try{
                                             if(user.isEmailVerified()){
                                                 Log.d(TAG, "onComplete: success. email is verified.");
@@ -127,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                                             }
                                         }catch (NullPointerException e){
                                             Log.e(TAG, "onComplete: NullPointerException: " + e.getMessage() );
-                                        }
+                                        }   */
                                     }
 
                                     // ...
