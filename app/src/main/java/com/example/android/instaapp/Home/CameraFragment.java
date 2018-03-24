@@ -14,7 +14,7 @@ import com.example.android.instaapp.R;
  */
 
 public class CameraFragment extends Fragment {
-    private static final String TAG = "CameraFragment";
+    private static final String TAG = "PhotoFragment";
 
     @Nullable
     @Override
