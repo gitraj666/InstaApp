@@ -1,5 +1,6 @@
 package com.example.android.instaapp.Profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.instaapp.R;
+import com.example.android.instaapp.Share.ShareActivity;
 import com.example.android.instaapp.Utils.FirebaseMethods;
 import com.example.android.instaapp.Utils.UniversalImageLoader;
 import com.example.android.instaapp.models.User;
@@ -195,6 +197,16 @@ public class EditProfileFragment extends Fragment {
         mEmail.setText(userSettings.getUser().getEmail());
         mPhoneNumber.setText(String.valueOf(userSettings.getUser().getPhone_number()));
 
+
+        mChangeProfilePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: changing profile photo");
+                Intent intent = new Intent(getActivity(), ShareActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //268435456
+                getActivity().startActivity(intent);
+            }
+        });
 
     }
        /*
