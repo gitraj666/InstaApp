@@ -25,6 +25,8 @@ import com.example.android.instaapp.Utils.ViewCommentsFragment;
 import com.example.android.instaapp.Utils.ViewProfileFragment;
 import com.example.android.instaapp.ViewPostFragment;
 import com.example.android.instaapp.models.Photo;
+import com.example.android.instaapp.models.User;
+import com.google.firebase.auth.FirebaseAuth;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import java.util.ArrayList;
@@ -35,7 +37,8 @@ import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity implements
         ProfileFragment.OnGridImageSelectedListener ,
-        ViewPostFragment.OnCommentThreadSelectedListener{
+        ViewPostFragment.OnCommentThreadSelectedListener,
+        ViewProfileFragment.OnGridImageSelectedListener{
 
     private static final String TAG = "ProfileActivity";
 
@@ -100,17 +103,27 @@ public class ProfileActivity extends AppCompatActivity implements
         if(intent.hasExtra(getString(R.string.calling_activity))){
             Log.d(TAG, "init: searching for user object attached as intent extra");
             if(intent.hasExtra(getString(R.string.intent_user))){
-                Log.d(TAG, "init: inflating view profile");
-                ViewProfileFragment fragment = new ViewProfileFragment();
-                Bundle args = new Bundle();
-                args.putParcelable(getString(R.string.intent_user),
-                        intent.getParcelableExtra(getString(R.string.intent_user)));
-                fragment.setArguments(args);
+                User user = intent.getParcelableExtra(getString(R.string.intent_user));
+                if(!user.getUser_id().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                    Log.d(TAG, "init: inflating view profile");
+                    ViewProfileFragment fragment = new ViewProfileFragment();
+                    Bundle args = new Bundle();
+                    args.putParcelable(getString(R.string.intent_user),
+                            intent.getParcelableExtra(getString(R.string.intent_user)));
+                    fragment.setArguments(args);
 
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, fragment);
-                transaction.addToBackStack(getString(R.string.view_profile_fragment));
-                transaction.commit();
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.container, fragment);
+                    transaction.addToBackStack(getString(R.string.view_profile_fragment));
+                    transaction.commit();
+                }else{
+                    Log.d(TAG, "init: inflating Profile");
+                    ProfileFragment fragment = new ProfileFragment();
+                    FragmentTransaction transaction = ProfileActivity.this.getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.container, fragment);
+                    transaction.addToBackStack(getString(R.string.profile_fragment));
+                    transaction.commit();
+                }
             }else{
                 Toast.makeText(mContext, "something went wrong", Toast.LENGTH_SHORT).show();
             }
@@ -129,4 +142,3 @@ public class ProfileActivity extends AppCompatActivity implements
 
 
 }
-
